@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# myGit: the Hubbining
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Abstract
+myGit is a React.js web app that I am creating to hone my skills in Javascript, React, Router, MUI and Cypress even more. Using the official [Magic: the Gathering](https://docs.magicthegathering.io/) I plan to build an app to create and manage a digital collection of Magic cards as well as creating a Wishlist for cards that one would like to acquire.
 
-## Available Scripts
+#### Goals and Objectives
+- 
+-
+-
 
-In the project directory, you can run:
+## Technologies
+- [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://www.javascript.com/)
+  - [![React](https://img.shields.io/badge/react-%23323330.svg?style=for-the-badge&logo=react&logoColor=%23F7DF1E)](https://reactjs.org/)
+  - [![Router](https://img.shields.io/badge/router-%23323330.svg?style=for-the-badge&logo=react-router&logoColor=%CA4245)](https://reactrouter.com/en/main)
+- [![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+- [![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://www.css3.info/)
+- [![Cyrpess](https://img.shields.io/badge/cypress-%1004E9F.svg?style=for-the-badge&logo=cypress&logoColor=%23F7DF1E)](https://www.cypress.io/)
+- [![MUI](https://img.shields.io/badge/mui-007FFF.svg?style=for-the-badge&logo=mui&logoColor=white)](https://mui.com/)
 
-### `npm start`
+## Illustrations
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
+- 
+-
+-
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Possible Future Extensions
+- Card Ratings
+- Deck Building
 
-### `npm test`
+#### Milestones
+- 
+-
+-
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Challenges 
+- 
+-
+-
 
-### `npm run build`
+## Set Up
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Deployed at 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Local Installation
+1. Clone the repo
+   ```sh
+   git@github.com:MattWalterTX/myGit.git
+   ```
+2. Enter the directory and install NPM packages
+   ```sh
+   npm install
+   npm start
+   ``` 
+3. Enter the following url in your browser: http://localhost:3000/
+4. Explore the website
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Sources
+  - [Deckstats](https://deckstats.net/?lng=en)
+  - [the Gatherer](https://gatherer.wizards.com/Pages/Default.aspx)
+  - [Aetherhub](https://aetherhub.com/)
 
-### `npm run eject`
+## Contributors
+  - [Matt Walter](https://github.com/MattWalterTX)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Specs
+  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/showcase.html)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
