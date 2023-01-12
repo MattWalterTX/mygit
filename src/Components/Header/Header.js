@@ -79,11 +79,7 @@ const Header = () => {
               </MenuItem>
             ))}
           </Menu>
-          {/* <img src={logo} alt='logo' className='logo' ref={el => { logoIcon = el }} /> */}
-          <Typography variant="h3" className='dokes' component="h3" sx={(theme) => ({
-              typography: 'Anton, sans-serif', flexGrow: 1, color: 'black', fontStyle: 'bold', width:'100%'
-            })} >
-              {/* ref={el => {titleText = el}} */}
+          <Typography  >
             myGit: the Hubbening
           </Typography>
         </Toolbar>
