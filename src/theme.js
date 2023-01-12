@@ -5,8 +5,26 @@ import MAGIC from './fonts/magicthegathering/MAGIC.TTF'
 
 const theme = createTheme({
   typography: {
-    fontFamily: {MAGIC},
+    fontFamily: {Anton},
   },
+
+  palette: {
+
+    primary: {
+      main: '#FFCB5F',
+      light: '#FE7CE5',
+      dark: '#9966cc',
+      contrastText: '#000000'
+    },
+
+    secondary: {
+      main: '#336666',
+      light: '#996666',
+      dark: '	#cc99cc',
+      contrastText: '#000000'
+    },
+  }
+
 })
 
 export default theme

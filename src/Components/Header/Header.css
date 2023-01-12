@@ -7,7 +7,7 @@
 }
 
 .toolBar {
-  width: 100%
+  width: 100%,
 }
 
 .icon-button {
@@ -37,7 +37,7 @@
   transform: scaleX(1);
 }
 
-.dokes {
+.myGit {
   width: 100%;
   font-family: 'Anton', sans-serif;
   opacity: 0;
