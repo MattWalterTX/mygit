@@ -44,15 +44,14 @@ class  App extends Component {
     return (
       // can remove cssbaseline after theme implementation
       <div className="App">
-        <ThemeProvider>
+        <ThemeProvider theme={theme}>
         <CssBaseline>
           <Header/>
           <Routes>
-            <Route path='/'/>{/* home */}
-            <Route path="Collection"/>
-            <Route path="/:id"/>
-            <Route path="/:id"/>
-            <Route path="/*"/>
+            <Route path='/' element={(<Home />)} />
+            <Route path='/collection' element={(<Collection />)} />
+            <Route path='/about' element={(<About />)} />
+            <Route path='/*' element={(<BadURL />)} />
           </Routes>
 
           <Box sx={{ bgcolor: '#000', p: 2, color: '#FFCB5F' }} component="footer">
@@ -63,7 +62,6 @@ class  App extends Component {
               color="#FFCB5F"
               component="p"
             >
-              {/* Dad Joke Generator by T.I.M. */}
             </Typography>
           </Box>
 

@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import theme from '../../theme';
 import './Header.css'
 
 
@@ -46,7 +47,8 @@ const Header = () => {
   return (
     <Box className='header-container' sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar className='toolBar' disableGutters>
+        <Toolbar className='toolBar' disableGutters sx={(theme) => ({
+              backgroundColor: '#0E86D4' })} >
           <IconButton
             aria-label="more"
             className='icon-button'
@@ -57,7 +59,6 @@ const Header = () => {
             onClick={handleClick}
           >
             <MoreHorizIcon />
-            {/* <MoreVertIcon /> */}
           </IconButton>
           <Menu
             id="long-menu"
@@ -80,10 +81,7 @@ const Header = () => {
               </MenuItem>
             ))}
           </Menu>
-
-              <Typography variant="h3" className='dokes' component="h3" sx={(theme) => ({
-              typography: 'Anton, sans-serif', flexGrow: 1, color: 'black', fontStyle: 'bold', width:'100%'
-            })} >
+          <Typography >
             myGit: the Hubbening
           </Typography>
         </Toolbar>
