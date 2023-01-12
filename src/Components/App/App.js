@@ -42,7 +42,7 @@ class  App extends Component {
 
   render() {
     return (
-      // can remove cssbaseline after theme creation
+      // can remove cssbaseline after theme implementation
       <div className="App">
         <ThemeProvider>
         <CssBaseline>
