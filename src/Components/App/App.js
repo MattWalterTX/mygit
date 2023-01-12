@@ -8,7 +8,7 @@ import BadURL from '../BadURL/BadURL'
 import theme from '../../theme';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-import { ThemeProvider } from '@mui/material/styles';
+// import ThemeProvider from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import './App.css';
@@ -18,7 +18,7 @@ const Copyright = () => {
   return (
     <Typography variant="body2" color="#FFCB5F" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://github.com/thomedpete/Dokes">
+      <Link color="inherit" href="https://github.com/MattWalterTX/mygit">
         Matt Walter
       </Link>{' '}
       {new Date().getFullYear()}
@@ -45,9 +45,22 @@ class App extends Component {
     return (
       // can remove cssbaseline after theme creation
       <div>
-        <CssBaseline />
-          <Header/>
-          <Home />
+        {/* <ThemeProvider> */}
+          <CssBaseline />
+            <div className='App'>
+              <Header/>
+              <Routes>
+                <Route path='/' element={(<Home />)} />
+                <Route path='/collection' element={(<Collection />)} />
+                <Route path='/about' element={(<About />)} />
+                <Route path='/*' element={(<BadURL />)} />
+              </Routes>
+            </div>
+
+          <Box sx={{ bgcolor: '#000', p: 2, color: '#FFCB5F' }} component="footer">
+            <Copyright />
+          </Box>
+        {/* </ThemeProvider> */}
       </div>
     )
   }
