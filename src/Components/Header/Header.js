@@ -7,7 +7,7 @@ import AppBar from '@mui/material/AppBar'
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { MoreHorizIcon } from '@mui/icons-material/MoreHoriz';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import './Header.css'
 
 
@@ -56,6 +56,7 @@ const Header = () => {
             aria-haspopup="true"
             onClick={handleClick}
           >
+            <MoreHorizIcon />
             {/* <MoreVertIcon /> */}
           </IconButton>
           <Menu
@@ -79,6 +80,13 @@ const Header = () => {
               </MenuItem>
             ))}
           </Menu>
+
+              <Typography variant="h3" className='dokes' component="h3" sx={(theme) => ({
+              typography: 'Anton, sans-serif', flexGrow: 1, color: 'black', fontStyle: 'bold', width:'100%'
+            })} >
+            dokes
+          </Typography>
+
           <Typography  >
             myGit: the Hubbening
           </Typography>

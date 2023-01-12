@@ -8,10 +8,6 @@
   width: 100%
 }
 
-.logo {
-  height: 40px;
-}
-
 .toolBar {
   width: 100%
 }
@@ -21,7 +17,8 @@
 }
 
 .little-link {
-  color: #fdc95e;
+  color: #00ff55;
+  font-weight: bolder;
 }
 
 .little-link:after {
@@ -33,7 +30,7 @@
   width: 100%;
   height: 3px;
   transform: scaleX(0);
-  background-color: #9966cc;
+  background-color: #ff0000;
   transition: transform 3;
 }
 
