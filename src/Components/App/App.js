@@ -40,6 +40,25 @@ class  App extends Component {
     .then(data => console.log(data))
 }
 
+  // componentDidMount() {
+  //    let setBRO = []
+  //   fetch('https://api.magicthegathering.io/v1/cards?page=109')
+  //   .then(response => response.json())
+  //   .then(data => console.log('109', data))
+  //   fetch('https://api.magicthegathering.io/v1/cards?page=110')
+  //   .then(response => response.json())
+  //   .then(data => console.log('110', data))
+  //   fetch('https://api.magicthegathering.io/v1/cards?page=111')
+  //   .then(response => response.json())
+  //   .then(data => console.log('111', data))
+  //   fetch('https://api.magicthegathering.io/v1/cards?page=112')
+  //   .then(response => response.json())
+  //   .then(data => console.log('112', data))
+  //   fetch('https://api.magicthegathering.io/v1/cards?page=113')
+  //   .then(response => response.json())
+  //   .then(data => console.log('113', data))
+  // }
+
   render() {
     return (
       // can remove cssbaseline after theme implementation
