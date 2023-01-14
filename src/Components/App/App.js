@@ -33,7 +33,8 @@ class App extends Component {
     this.state = {
       cards: [],
       error: null,
-      selected: null
+      selected: null,
+      collection: []
     }
   }
 
@@ -55,6 +56,15 @@ class App extends Component {
     })
   } 
 
+  addCard = (newCard) => {
+    if(!this.state.collection.some(item => item.id === newCard.id))
+      this.setState({ collection: [...this.state.collection, newCard]})
+  }
+
+  removeCard = (card) => {
+    console.log('delete this')
+  }
+
   render() {
     return (
       // can remove cssbaseline after theme implementation
@@ -63,8 +73,8 @@ class App extends Component {
         <CssBaseline>
           <Header/>
           <Routes>
-            <Route path='/' element={(<Home cards={this.state.cards}/>)} />
-            <Route path='/collection' element={(<Collection />)} />
+            <Route path='/' element={(<Home cards={this.state.cards} addCard={this.addCard} removeCard={this.removeCard}/>)} />
+            <Route path='/collection' element={(<Collection collection={this.collection} addCard={this.addCard} removeCard={this.removeCard}/>)} />
             <Route path='/about' element={(<About />)} />
             <Route path='/*' element={(<BadURL />)} />
           </Routes>

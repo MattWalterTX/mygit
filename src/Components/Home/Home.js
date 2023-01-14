@@ -11,7 +11,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-const Home = ({ cards }) => {
+const Home = ({ cards, addCard, removeCard }) => {
   function createData(
     name: string,
     color: string,

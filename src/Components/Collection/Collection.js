@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-const Collection = () => { // bring down collection prop from state
+const Collection = ({ collection, addCard, removeCard }) => { // bring down collection prop from state
   // const cardCollection = collection.map((card) => {
   //   return (
   //     <div> table item of card name, w/ color and qty</div>
@@ -40,6 +40,7 @@ const Collection = () => { // bring down collection prop from state
   return (
     <div>
       <h3>Your Acquisitions</h3>
+      <h4>Click a card's name to view more details.</h4>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 150 }} aria-label="simple table">
             <TableHead>
