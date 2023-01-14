@@ -20,7 +20,6 @@ const Home = ({ cards }) => {
     return { name, color, cmc };
   }
 
-
   // remove after connecting data
   const rows = [
     createData("Corrupt", "Black", 6),
