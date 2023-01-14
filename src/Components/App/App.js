@@ -13,8 +13,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import './App.css';
 import Button from '@mui/material/Button';
-import { BedroomParentSharp, ControlCameraSharp } from '@mui/icons-material';
-import { wait } from '@testing-library/user-event/dist/utils';
 
 const Copyright = () => {
   return (
@@ -29,14 +27,6 @@ const Copyright = () => {
   );
 }
 
-let whites = [];
-let blacks = [];
-let blues = [];
-let reds = [];
-let greens = [];
-// let allFetched = [...whites, ...blacks, ...blues, ...reds, ...greens]
-let allFetched = []
-
 class App extends Component {
   constructor() {
     super()
@@ -47,57 +37,23 @@ class App extends Component {
     }
   }
   
+  getData = (color) => {
+    return fetch(`https://api.magicthegathering.io/v1/cards?set=BRO&colors=${color}`)
+    .then(response => response.json())
+    .then(data => data.cards)
+    .catch((error) => {
+      this.setState({ error: 'The server is experiencing some issues please try  again later'})
+    })
+  }
+
   componentDidMount() {
-    fetch('https://api.magicthegathering.io/v1/cards?set=BRO&colors=W')
-    .then(response => response.json())
-    .then(data => whites.push(data.cards))
-    .then(console.log('AF', allFetched, 'W', whites))
-    // .then(data => this.setState({ cards: data.cards }))
-    .catch((error) => {
-      this.setState({ error: 'The server is experiencing some issues please try  again later'})
+    Promise.all([this.getData('W'), this.getData('B'), this.getData('U'), this.getData('R'), this.getData('G')])
+    .then(data => {
+      const allFetched = [...data[0], ...data[1], ...data[2], ...data[3], ...data[4]];
+      console.log(allFetched);
+      this.setState({ cards: allFetched });
     })
-
-    fetch('https://api.magicthegathering.io/v1/cards?set=BRO&colors=B')
-    .then(response => response.json())
-    .then(data => blacks.push(data.cards))
-    // .then(data => allFetched.push(data.cards))
-
-
-    // .then(data =>  this.setState({ cards: [...this.state.cards, data.cards ] }))
-    .catch((error) => {
-      this.setState({ error: 'The server is experiencing some issues please try  again later'})
-    })
-
-
-    fetch('https://api.magicthegathering.io/v1/cards?set=BRO&colors=U')
-    .then(response => response.json())
-    .then(data => blues.push(data.cards))
-    .catch((error) => {
-      this.setState({ error: 'The server is experiencing some issues please try  again later'})
-    })
-
-
-    fetch('https://api.magicthegathering.io/v1/cards?set=BRO&colors=R')
-    .then(response => response.json())
-    .then(data => reds.push(data.cards))
-    .catch((error) => {
-      this.setState({ error: 'The server is experiencing some issues please try  again later'})
-    })
-
-
-    fetch('https://api.magicthegathering.io/v1/cards?set=BRO&colors=G')
-    .then(response => response.json())
-    .then(data => greens.push(data.cards))
-    .then(data => console.log('AF', allFetched))
-    .catch((error) => {
-      this.setState({ error: 'The server is experiencing some issues please try  again later'})
-    })
-    .then(data => console.log(whites, 'w', blues, 'u', blacks, 'b', reds, 'r', greens, 'g')) // remove log
-    .then(data => allFetched = [...whites[0], ...blacks[0], ...blues[0], ...reds[0], ...greens[0]])
-    // whites.cards.forEach(card => allFetched.push(card))
-    .then(data => this.setState({ cards: allFetched }))
   } 
-// let allFetched = [...whites, ...blacks, ...blues, ...reds, ...greens]
 
   render() {
     return (
