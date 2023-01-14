@@ -12,6 +12,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import './App.css';
+import Button from '@mui/material/Button';
 
 const Copyright = () => {
   return (
@@ -26,19 +27,43 @@ const Copyright = () => {
   );
 }
 
-class  App extends Component {
+class App extends Component {
   constructor() {
     super()
     this.state = {
-      cards: []
+      cards: [],
+      error: null,
+      selected: null,
+      collection: []
     }
   }
 
-  componentDidMount() {
-    fetch('https://api.magicthegathering.io/v1/cards')
+  getData = (color) => {
+    return fetch(`https://api.magicthegathering.io/v1/cards?set=BRO&colors=${color}`)
     .then(response => response.json())
-    .then(data => console.log(data))
-}
+    .then(data => data.cards)
+    .catch((error) => {
+      this.setState({ error: 'The server is experiencing some issues please try  again later'})
+    })
+  }
+
+  componentDidMount() {
+    Promise.all([this.getData('W'), this.getData('B'), this.getData('U'), this.getData('R'), this.getData('G')])
+    .then(data => {
+      const allFetched = [...data[0], ...data[1], ...data[2], ...data[3], ...data[4]];
+      console.log(allFetched);
+      this.setState({ cards: allFetched });
+    })
+  } 
+
+  addCard = (newCard) => {
+    if(!this.state.collection.some(item => item.id === newCard.id))
+      this.setState({ collection: [...this.state.collection, newCard]})
+  }
+
+  removeCard = (card) => {
+    console.log('delete this')
+  }
 
   // componentDidMount() {
   //    let setBRO = []
@@ -67,12 +92,11 @@ class  App extends Component {
         <CssBaseline>
           <Header/>
           <Routes>
-            <Route path='/' element={(<Home />)} />
-            <Route path='/collection' element={(<Collection />)} />
+            <Route path='/' element={(<Home cards={this.state.cards} addCard={this.addCard} removeCard={this.removeCard}/>)} />
+            <Route path='/collection' element={(<Collection collection={this.collection} addCard={this.addCard} removeCard={this.removeCard}/>)} />
             <Route path='/about' element={(<About />)} />
             <Route path='/*' element={(<BadURL />)} />
           </Routes>
-
           <Box sx={{ bgcolor: '#000', p: 2, color: '#FFCB5F' }} component="footer">
           <Copyright />
             <Typography
