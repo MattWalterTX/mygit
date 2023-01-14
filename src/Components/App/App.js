@@ -36,7 +36,7 @@ class App extends Component {
       selected: null
     }
   }
-  
+
   getData = (color) => {
     return fetch(`https://api.magicthegathering.io/v1/cards?set=BRO&colors=${color}`)
     .then(response => response.json())
@@ -63,7 +63,7 @@ class App extends Component {
         <CssBaseline>
           <Header/>
           <Routes>
-            <Route path='/' element={(<Home />)} />
+            <Route path='/' element={(<Home cards={this.state.cards}/>)} />
             <Route path='/collection' element={(<Collection />)} />
             <Route path='/about' element={(<About />)} />
             <Route path='/*' element={(<BadURL />)} />
