@@ -16,28 +16,18 @@ const Home = ({ cards, addCard, removeCard }) => {
     name: string,
     color: string,
     cmc: number,
-    key: string
     ) {
-    return { name, color, cmc, key };
+    return { name, color, cmc};
   }
 
-  // remove after connecting data
-  const rows = [
-    cards.map(card => {
-      createData(card.name, card.color, card.cmc, card.id)
-    })
-    // createData("Corrupt", "Black", 6),
-    // createData("Titania, Voice of Gaea // Titania, Gaea Incarnate", "Green", 3),
-    // createData("Junkyard Genius", "Black, Red", 3),
-    // createData("Recommission", "White", 2),
-    // createData("Powerstone Fracture", "Black", 2),
-    // createData("Draconic Destiny", "Red", 3),
-    // createData("Urza, Lord Protector // Urza, Planeswalker", "Blue, White", 3),
-    // createData("Calamity's Wake", "White", 2),
-    // createData("Visions of Phyrexia", "Red", 4),
-    // createData("The Temporal Anchor", "Blue", 6),
-  ];
-
+    const rows = cards.map(card => {
+   return <TableRow key={card.id}>
+      <TableCell>{card.name}</TableCell>
+      <TableCell align="right">{card.colors}</TableCell>
+      <TableCell align="right">{card.cmc}</TableCell>
+   </TableRow>
+})
+    
   return (
     <div>
       <h2>Set: The Brothers' War</h2>
@@ -54,6 +44,9 @@ const Home = ({ cards, addCard, removeCard }) => {
           </TableRow>
         </TableHead>
         <TableBody>
+  {rows}
+</TableBody>
+        {/* <TableBody>
           {rows.map((row) => (
             <TableRow
               key={row.name}
@@ -64,7 +57,7 @@ const Home = ({ cards, addCard, removeCard }) => {
               <TableCell align="right">{row.cmc}</TableCell>
             </TableRow>
           ))}
-        </TableBody>
+        </TableBody> */}
       </Table>
     </TableContainer>
     </div>

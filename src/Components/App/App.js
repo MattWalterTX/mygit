@@ -38,6 +38,10 @@ class App extends Component {
     }
   }
 
+  // removeDupes = (cards) => {
+  //   return cards.filter(card => )
+  // }
+
   getData = (color) => {
     return fetch(`https://api.magicthegathering.io/v1/cards?set=BRO&colors=${color}`)
     .then(response => response.json())
@@ -51,8 +55,8 @@ class App extends Component {
     Promise.all([this.getData('W'), this.getData('B'), this.getData('U'), this.getData('R'), this.getData('G')])
     .then(data => {
       const allFetched = [...data[0], ...data[1], ...data[2], ...data[3], ...data[4]];
-      console.log(allFetched);
-      this.setState({ cards: allFetched });
+      let noDupes = allFetched.filter( (ele, ind) => ind === allFetched.findIndex( elem => elem.jobid === ele.jobid && elem.id === ele.id))
+      this.setState({ cards: noDupes });
     })
   } 
 
