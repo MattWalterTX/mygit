@@ -15,23 +15,27 @@ const Home = ({ cards, addCard, removeCard }) => {
   function createData(
     name: string,
     color: string,
-    cmc: number
+    cmc: number,
+    key: string
     ) {
-    return { name, color, cmc };
+    return { name, color, cmc, key };
   }
 
   // remove after connecting data
   const rows = [
-    createData("Corrupt", "Black", 6),
-    createData("Titania, Voice of Gaea // Titania, Gaea Incarnate", "Green", 3),
-    createData("Junkyard Genius", "Black, Red", 3),
-    createData("Recommission", "White", 2),
-    createData("Powerstone Fracture", "Black", 2),
-    createData("Draconic Destiny", "Red", 3),
-    createData("Urza, Lord Protector // Urza, Planeswalker", "Blue, White", 3),
-    createData("Calamity's Wake", "White", 2),
-    createData("Visions of Phyrexia", "Red", 4),
-    createData("The Temporal Anchor", "Blue", 6),
+    cards.map(card => {
+      createData(card.name, card.color, card.cmc, card.id)
+    })
+    // createData("Corrupt", "Black", 6),
+    // createData("Titania, Voice of Gaea // Titania, Gaea Incarnate", "Green", 3),
+    // createData("Junkyard Genius", "Black, Red", 3),
+    // createData("Recommission", "White", 2),
+    // createData("Powerstone Fracture", "Black", 2),
+    // createData("Draconic Destiny", "Red", 3),
+    // createData("Urza, Lord Protector // Urza, Planeswalker", "Blue, White", 3),
+    // createData("Calamity's Wake", "White", 2),
+    // createData("Visions of Phyrexia", "Red", 4),
+    // createData("The Temporal Anchor", "Blue", 6),
   ];
 
   return (
