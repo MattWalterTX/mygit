@@ -5,6 +5,7 @@ import Home from '../Home/Home'
 import Header from '../Header/Header';
 import Collection from '../Collection/Collection';
 import BadURL from '../BadURL/BadURL'
+import MTGCard from '../MTGCard/MTGCard'
 import theme from '../../theme';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
@@ -18,7 +19,7 @@ const Copyright = () => {
   return (
     <Typography variant="body2" color="#FFCB5F" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://github.com/thomedpete/Dokes">
+      <Link color="inherit" href="https://github.com/MattWalterTX/mygit">
         Matt Walter
       </Link>{' '}
       {new Date().getFullYear()}
@@ -38,6 +39,10 @@ class App extends Component {
     }
   }
 
+  // removeDupes = (cards) => {
+  //   return cards.filter(card => )
+  // }
+
   getData = (color) => {
     return fetch(`https://api.magicthegathering.io/v1/cards?set=BRO&colors=${color}`)
     .then(response => response.json())
@@ -51,8 +56,8 @@ class App extends Component {
     Promise.all([this.getData('W'), this.getData('B'), this.getData('U'), this.getData('R'), this.getData('G')])
     .then(data => {
       const allFetched = [...data[0], ...data[1], ...data[2], ...data[3], ...data[4]];
-      console.log(allFetched);
-      this.setState({ cards: allFetched });
+      let noDupes = allFetched.filter( (ele, ind) => ind === allFetched.findIndex( elem => elem.jobid === ele.jobid && elem.id === ele.id))
+      this.setState({ cards: noDupes });
     })
   } 
 
@@ -65,6 +70,11 @@ class App extends Component {
     console.log('delete this')
   }
 
+  showMore = (showCard) => {
+    console.log(this.state.cards.find( card => card.id === showCard.id))
+    this.setState({ selected: this.state.cards.find( card => card.id === showCard.id) })
+  }
+
   render() {
     return (
       // can remove cssbaseline after theme implementation
@@ -72,12 +82,17 @@ class App extends Component {
         <ThemeProvider theme={theme}>
         <CssBaseline>
           <Header/>
+
+
           <Routes>
-            <Route path='/' element={(<Home cards={this.state.cards} addCard={this.addCard} removeCard={this.removeCard}/>)} />
+            <Route path='/' element={(<Home cards={this.state.cards} addCard={this.addCard} removeCard={this.removeCard} showMore={this.showMore} />)} />
             <Route path='/collection' element={(<Collection collection={this.collection} addCard={this.addCard} removeCard={this.removeCard}/>)} />
+            <Route path="/:id" element={<MTGCard card={this.state.selected} addCard={this.addCard} />} />
             <Route path='/about' element={(<About />)} />
             <Route path='/*' element={(<BadURL />)} />
           </Routes>
+
+
           <Box sx={{ bgcolor: '#000', p: 2, color: '#FFCB5F' }} component="footer">
           <Copyright />
             <Typography
