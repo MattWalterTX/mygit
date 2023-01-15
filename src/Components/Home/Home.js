@@ -37,23 +37,22 @@ const Home = ({ cards, addCard, removeCard, showMore }) => {
     <div>
       <h2>Set: The Brothers' War</h2>
       <h4>Pick a color to sort.</h4>
-      <h4>Click a card's name to view more details.</h4>
+      <h4>Select a card to view more details.</h4>
       <Form />
       <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 150 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell align="right">Color</TableCell>
-            <TableCell align="right">CMC</TableCell>
-            <TableCell align="right"></TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows}
-        </TableBody>
-      </Table>
-    </TableContainer>
+        <Table sx={{ minWidth: 150 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Name</TableCell>
+              <TableCell align="right">Color</TableCell>
+              <TableCell align="right">CMC</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   )
 }
