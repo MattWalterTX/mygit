@@ -3,6 +3,7 @@ import { Stack } from '@mui/material';
 import PropTypes from 'prop-types';
 import React, { Component, useRef } from 'react'
 import Form from '../Form/Form'
+import { Link } from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -10,6 +11,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { Domain } from '@mui/icons-material';
 
 const Home = ({ cards, addCard, removeCard }) => {
   function createData(
@@ -20,9 +22,9 @@ const Home = ({ cards, addCard, removeCard }) => {
     return { name, color, cmc};
   }
 
-    const rows = cards.map(card => {
+  const rows = cards.map(card => {
    return <TableRow key={card.id}>
-      <TableCell>{card.name}</TableCell>
+      <TableCell><Link to={card.id}>{card.name}</Link></TableCell>
       <TableCell align="right">{card.colors}</TableCell>
       <TableCell align="right">{card.cmc}</TableCell>
    </TableRow>

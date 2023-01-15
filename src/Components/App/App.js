@@ -5,6 +5,7 @@ import Home from '../Home/Home'
 import Header from '../Header/Header';
 import Collection from '../Collection/Collection';
 import BadURL from '../BadURL/BadURL'
+import MTGCard from '../MTGCard/MTGCard'
 import theme from '../../theme';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
@@ -18,7 +19,7 @@ const Copyright = () => {
   return (
     <Typography variant="body2" color="#FFCB5F" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://github.com/thomedpete/Dokes">
+      <Link color="inherit" href="https://github.com/MattWalterTX/mygit">
         Matt Walter
       </Link>{' '}
       {new Date().getFullYear()}
@@ -95,12 +96,28 @@ class App extends Component {
         <ThemeProvider theme={theme}>
         <CssBaseline>
           <Header/>
+
+
           <Routes>
             <Route path='/' element={(<Home cards={this.state.cards} addCard={this.addCard} removeCard={this.removeCard}/>)} />
             <Route path='/collection' element={(<Collection collection={this.collection} addCard={this.addCard} removeCard={this.removeCard}/>)} />
+            <Route path="/:id" element={<MTGCard />
+            
+                  // card={[({ match }) => {
+                  //   const cardToRender = this.state.cards.find(card => card.id === match.params.id)
+                  //   if(!cardToRender) {
+                  //     return null, <BadURL/>
+                  //   }
+                  //   return <MTGCard card={cardToRender} />
+                  // }]}
+                  // />} 
+            }
+            />
             <Route path='/about' element={(<About />)} />
             <Route path='/*' element={(<BadURL />)} />
           </Routes>
+
+
           <Box sx={{ bgcolor: '#000', p: 2, color: '#FFCB5F' }} component="footer">
           <Copyright />
             <Typography
