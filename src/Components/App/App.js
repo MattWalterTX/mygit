@@ -72,7 +72,7 @@ class App extends Component {
 
   showMore = (showCard) => {
     console.log(this.state.cards.find( card => card.id === showCard.id))
-    this.setState({ selected: [this.state.cards.find( card => card.id === showCard.id)]})
+    this.setState({ selected: this.state.cards.find( card => card.id === showCard.id) })
   }
 
   render() {
@@ -87,7 +87,7 @@ class App extends Component {
           <Routes>
             <Route path='/' element={(<Home cards={this.state.cards} addCard={this.addCard} removeCard={this.removeCard} showMore={this.showMore} />)} />
             <Route path='/collection' element={(<Collection collection={this.collection} addCard={this.addCard} removeCard={this.removeCard}/>)} />
-            <Route path="/:id" element={<MTGCard state={this.state.selected} />} />
+            <Route path="/:id" element={<MTGCard card={this.state.selected} addCard={this.addCard} />} />
             <Route path='/about' element={(<About />)} />
             <Route path='/*' element={(<BadURL />)} />
           </Routes>

@@ -30,7 +30,9 @@ class Form extends Component {
           <option value="multicolored">Multicolored</option>
         </select>
         <Button variant="contained" sx={() => ({
-              backgroundColor: '#0E86D4', color: 'white', fontStyle: 'italic', width: '35%' })}>Get Cards</Button>
+          backgroundColor: '#0E86D4', color: 'white', fontStyle: 'italic', width: '35%' })}>
+            Get Cards
+        </Button>
       </Stack>
     )
   }
