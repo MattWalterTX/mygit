@@ -9,6 +9,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Whoopsie from '../Whoopsie/Whoopsie'
 
 const Collection = ({ collection, removeCard }) => { // bring down collection prop from state
   // const cardCollection = collection.map((card) => {
@@ -42,6 +43,7 @@ const Collection = ({ collection, removeCard }) => { // bring down collection pr
     <div>
       <h3>Your Acquisitions</h3>
       <h4>Select a card to REMOVE from your collection</h4>
+      {!collection.length && <Whoopsie />}
        <TableContainer component={Paper}>
         <Table sx={{ minWidth: 150 }} aria-label="simple table">
           <TableHead>
