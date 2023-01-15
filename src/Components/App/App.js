@@ -101,17 +101,17 @@ class App extends Component {
           <Routes>
             <Route path='/' element={(<Home cards={this.state.cards} addCard={this.addCard} removeCard={this.removeCard}/>)} />
             <Route path='/collection' element={(<Collection collection={this.collection} addCard={this.addCard} removeCard={this.removeCard}/>)} />
-            <Route path="/:id" element={<MTGCard />
+            <Route path="/:id" element={<MTGCard 
             
-                  // card={[({ match }) => {
-                  //   const cardToRender = this.state.cards.find(card => card.id === match.params.id)
-                  //   if(!cardToRender) {
-                  //     return null, <BadURL/>
-                  //   }
-                  //   return <MTGCard card={cardToRender} />
-                  // }]}
-                  // />} 
-            }
+                  card={[({ match }) => {
+                    const cardToRender = this.state.cards.find(card => card.id === match.params.id)
+                    if(!cardToRender) {
+                      return null, <BadURL/>
+                    }
+                    return <MTGCard card={cardToRender} />
+                  }]}
+                />}
+            
             />
             <Route path='/about' element={(<About />)} />
             <Route path='/*' element={(<BadURL />)} />

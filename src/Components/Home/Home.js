@@ -24,7 +24,12 @@ const Home = ({ cards, addCard, removeCard }) => {
 
   const rows = cards.map(card => {
    return <TableRow key={card.id}>
-      <TableCell><Link to={card.id}>{card.name}</Link></TableCell>
+      <TableCell>
+        <Button variant="contained" state={card} component={Link} sx={() => ({
+          backgroundColor: '#0E86D4', color: 'white', fontStyle: 'italic', width: '70%' })}>
+            {card.name}
+        </Button>
+      </TableCell>
       <TableCell align="right">{card.colors}</TableCell>
       <TableCell align="right">{card.cmc}</TableCell>
    </TableRow>
@@ -43,6 +48,7 @@ const Home = ({ cards, addCard, removeCard }) => {
             <TableCell>Name</TableCell>
             <TableCell align="right">Color</TableCell>
             <TableCell align="right">CMC</TableCell>
+            <TableCell align="right"></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
