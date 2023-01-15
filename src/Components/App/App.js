@@ -70,24 +70,10 @@ class App extends Component {
     console.log('delete this')
   }
 
-  // componentDidMount() {
-  //    let setBRO = []
-  //   fetch('https://api.magicthegathering.io/v1/cards?page=109')
-  //   .then(response => response.json())
-  //   .then(data => console.log('109', data))
-  //   fetch('https://api.magicthegathering.io/v1/cards?page=110')
-  //   .then(response => response.json())
-  //   .then(data => console.log('110', data))
-  //   fetch('https://api.magicthegathering.io/v1/cards?page=111')
-  //   .then(response => response.json())
-  //   .then(data => console.log('111', data))
-  //   fetch('https://api.magicthegathering.io/v1/cards?page=112')
-  //   .then(response => response.json())
-  //   .then(data => console.log('112', data))
-  //   fetch('https://api.magicthegathering.io/v1/cards?page=113')
-  //   .then(response => response.json())
-  //   .then(data => console.log('113', data))
-  // }
+  showMore = (showCard) => {
+    console.log(this.state.cards.find( card => card.id === showCard.id))
+    this.setState({ selected: [this.state.cards.find( card => card.id === showCard.id)]})
+  }
 
   render() {
     return (
@@ -99,20 +85,9 @@ class App extends Component {
 
 
           <Routes>
-            <Route path='/' element={(<Home cards={this.state.cards} addCard={this.addCard} removeCard={this.removeCard}/>)} />
+            <Route path='/' element={(<Home cards={this.state.cards} addCard={this.addCard} removeCard={this.removeCard} showMore={this.showMore} />)} />
             <Route path='/collection' element={(<Collection collection={this.collection} addCard={this.addCard} removeCard={this.removeCard}/>)} />
-            <Route path="/:id" element={<MTGCard 
-            
-                  card={[({ match }) => {
-                    const cardToRender = this.state.cards.find(card => card.id === match.params.id)
-                    if(!cardToRender) {
-                      return null, <BadURL/>
-                    }
-                    return <MTGCard card={cardToRender} />
-                  }]}
-                />}
-            
-            />
+            <Route path="/:id" element={<MTGCard state={this.state.selected} />} />
             <Route path='/about' element={(<About />)} />
             <Route path='/*' element={(<BadURL />)} />
           </Routes>

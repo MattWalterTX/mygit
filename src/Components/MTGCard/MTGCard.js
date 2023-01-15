@@ -14,9 +14,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
 const MTGCard = ({ card }) => {
-console.log('FUCK CUKL CUCUCKC')
   return (
-    <div>CARD INFO</div>
+    <div>card</div>
   )
 }
 
