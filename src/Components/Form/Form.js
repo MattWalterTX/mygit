@@ -29,7 +29,7 @@ class Form extends Component {
           <option value="white">W - White</option>
         </select>
         <Button variant="contained" sx={() => ({
-          backgroundColor: '#0E86D4', color: 'white', fontStyle: 'italic', width: '35%' })}>
+          backgroundColor: '#0E86D4', color: 'white', fontWeight: 'bold', width: '35%' })}>
             Sort Cards
         </Button>
       </Stack>
