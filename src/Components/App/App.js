@@ -60,12 +60,11 @@ class App extends Component {
       let noDupes = allFetched.filter( (ele, ind) => ind === allFetched.findIndex( elem => elem.jobid === ele.jobid && elem.id === ele.id))
       this.setState({ cards: noDupes });
       this.setState({ whites: data[0] });
-      this.setState({ blacks: data[2] });
-      this.setState({ blues: data[1] });
+      this.setState({ blacks: data[1] });
+      this.setState({ blues: data[2] });
       this.setState({ reds: data[3] });
       this.setState({ greens: data[4] });
     })
-    
   } 
 
   addCard = (newCard) => {
@@ -82,42 +81,22 @@ class App extends Component {
     this.setState({ selected: this.state.cards.find( card => card.id === showCard.id) })
   }
 
-  // sort = () => {
-    
-  // }
-
   sort = newColor => {
     this.setState({ filter: newColor })
   }
 
-  // sort = () => {
-    // to hold the dropdown state (all or color) so we can pass this dynamically into the Homes
-        // maybe have to hold this as a var instead of a static Fn? try if this fails.
-    // change Form default value from all to cards, or rework everything with cards
-  // }
-
-
-
-                  // <Route path='/' element={(<Home cards={`this.state.${filter}`} showMore={this.showMore}  />)} />
-                        // should be able to render home page w/ sort result {default value is cards/ all}
-
   render() {
     return (
-      // can remove cssbaseline after theme implementation
       <div className="App">
         <ThemeProvider theme={theme}>
           <Header/>
-
-
           <Routes>
-            <Route path='/' element={(<Home cards={this.state.cards} showMore={this.showMore} sort={this.sort}/>)} />
+            <Route path='/' element={(<Home cards={this.state[this.state.filter]} showMore={this.showMore} sort={this.sort} />)} />
             <Route path='/collection' element={(<Collection collection={this.state.collection}  removeCard={this.removeCard}/> )} />
             <Route exact path="/:id" element={<MTGCard card={this.state.selected} addCard={this.addCard} />} />
             <Route path='/about' element={(<About />)} />
             <Route path='/*' element={(<BadURL />)} />
           </Routes>
-
-
           <Box sx={{ bgcolor: '#000', p: 2, color: '#FFCB5F' }} component="footer">
           <Copyright />
             <Typography
@@ -128,8 +107,6 @@ class App extends Component {
             >
             </Typography>
           </Box>
-
-
         </ThemeProvider>
       </div>
     )

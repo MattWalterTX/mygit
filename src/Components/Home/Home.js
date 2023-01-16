@@ -38,7 +38,7 @@ const Home = ({ cards, showMore, sort }) => {
       <h2>Set: The Brothers' War</h2>
       <h4>Pick a color to sort.</h4>
       <h4>Select a card to view more details.</h4>
-      <Form sort={sort}/>
+      <Form sort={sort} />
       {!cards.length && <h2>Fetching Card Info</h2>}
 
       <TableContainer component={Paper}>
