@@ -21,8 +21,12 @@ import { spacing } from '@mui/system';
 
 const MTGCard = ({ card, addCard }) => {
 
+
+
+
   return (
     <div>
+      {!card ? <BadURL /> : 
       <Card sx={{ minWidth: 275, pb: '5%'}} >
         <CardContent>
           <img src={card.imageUrl} alt={card}></img>
@@ -40,6 +44,7 @@ const MTGCard = ({ card, addCard }) => {
           </Button>
         </Stack>
       </Card>
+      }
     </div>
   )
 }

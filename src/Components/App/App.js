@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useParams } from 'react-router-dom'
 import About from '../About/About';
 import Home from '../Home/Home'
 import Header from '../Header/Header';
@@ -81,8 +81,19 @@ class App extends Component {
   }
 
   sort = () => {
-
+    let { selection } = useParams()
   }
+
+  // sort = () => {
+    // to hold the dropdown state (all or color) so we can pass this dynamically into the Homes
+        // maybe have to hold this as a var instead of a static Fn? try if this fails.
+    // change Form default value from all to cards, or rework everything with cards
+  // }
+
+
+
+                  // <Route path='/' element={(<Home cards={`this.state.${sort}`} showMore={this.showMore}  />)} />
+                        // should be able to render home page w/ sort result {default value is cards/ all}
 
   render() {
     return (
@@ -95,7 +106,7 @@ class App extends Component {
           <Routes>
             <Route path='/' element={(<Home cards={this.state.cards} showMore={this.showMore} />)} />
             <Route path='/collection' element={(<Collection collection={this.state.collection}  removeCard={this.removeCard}/> )} />
-            <Route path="/:id" element={<MTGCard card={this.state.selected} addCard={this.addCard} />} />
+            <Route exact path="/:id" element={<MTGCard card={this.state.selected} addCard={this.addCard} />} />
             <Route path='/about' element={(<About />)} />
             <Route path='/*' element={(<BadURL />)} />
           </Routes>
