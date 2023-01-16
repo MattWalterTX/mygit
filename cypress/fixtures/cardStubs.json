@@ -1,0 +1,29 @@
+{
+  "cards": [
+    {"name": "Ancestor's Chosen",
+      "cmc": 7,
+      "colors": ["W"],
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=130550&type=card"
+    },
+    {"name": "Supreme Will",
+      "cmc": 3,
+      "colors": ["U"],
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=547550&type=card"
+    },
+    {"name": "Culling Drone",
+      "cmc": 2,
+      "colors": ["B"],
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=401852&type=card"
+    },
+    {"name": "Boiling Earth",
+      "cmc": 2,
+      "colors": ["R"],
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=401827&type=card"
+    },
+    {"name": "Unnatural Aggression",
+      "cmc": 3,
+      "colors": ["G"],
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=402085&type=card"
+    }
+  ]
+}

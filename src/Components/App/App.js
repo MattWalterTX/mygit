@@ -10,7 +10,6 @@ import theme from '../../theme';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import './App.css';
 import Button from '@mui/material/Button';
@@ -44,10 +43,6 @@ class App extends Component {
     }
   }
 
-  // removeDupes = (cards) => {
-  //   return cards.filter(card => )
-  // }
-
   getData = (color) => {
     return fetch(`https://api.magicthegathering.io/v1/cards?set=BRO&colors=${color}`)
     .then(response => response.json())
@@ -63,11 +58,11 @@ class App extends Component {
       const allFetched = [...data[0], ...data[1], ...data[2], ...data[3], ...data[4]];
       let noDupes = allFetched.filter( (ele, ind) => ind === allFetched.findIndex( elem => elem.jobid === ele.jobid && elem.id === ele.id))
       this.setState({ cards: noDupes });
-      this.setState({ whites: data[0]});
-      this.setState({ blacks: data[2]});
-      this.setState({ blues: data[1]});
-      this.setState({ reds: data[3]});
-      this.setState({ greens: data[4]});
+      this.setState({ whites: data[0] });
+      this.setState({ blacks: data[2] });
+      this.setState({ blues: data[1] });
+      this.setState({ reds: data[3] });
+      this.setState({ greens: data[4] });
     })
   } 
 
