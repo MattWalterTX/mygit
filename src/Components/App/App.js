@@ -32,14 +32,15 @@ class App extends Component {
     super()
     this.state = {
       cards: [],
-      error: null,
-      selected: null,
-      collection: [],
       whites: [],
       blues: [],
       blacks: [],
       reds: [],
       greens: [],
+      filter: 'cards',
+      error: null,
+      selected: null,
+      collection: [],
     }
   }
 
@@ -64,6 +65,7 @@ class App extends Component {
       this.setState({ reds: data[3] });
       this.setState({ greens: data[4] });
     })
+    
   } 
 
   addCard = (newCard) => {
@@ -71,7 +73,7 @@ class App extends Component {
       this.setState({ collection: [...this.state.collection, newCard]})
   }
 
-  removeCard = (event, card) => {
+  removeCard = (event) => {
     const update = this.state.collection.filter(item => item.id !== event.id)
     this.setState({ collection: update})
   }
@@ -80,8 +82,12 @@ class App extends Component {
     this.setState({ selected: this.state.cards.find( card => card.id === showCard.id) })
   }
 
-  sort = () => {
-    let { selection } = useParams()
+  // sort = () => {
+    
+  // }
+
+  sort = newColor => {
+    this.setState({ filter: newColor })
   }
 
   // sort = () => {
@@ -92,7 +98,7 @@ class App extends Component {
 
 
 
-                  // <Route path='/' element={(<Home cards={`this.state.${sort}`} showMore={this.showMore}  />)} />
+                  // <Route path='/' element={(<Home cards={`this.state.${filter}`} showMore={this.showMore}  />)} />
                         // should be able to render home page w/ sort result {default value is cards/ all}
 
   render() {
@@ -104,7 +110,7 @@ class App extends Component {
 
 
           <Routes>
-            <Route path='/' element={(<Home cards={this.state.cards} showMore={this.showMore} />)} />
+            <Route path='/' element={(<Home cards={this.state.cards} showMore={this.showMore} sort={this.sort}/>)} />
             <Route path='/collection' element={(<Collection collection={this.state.collection}  removeCard={this.removeCard}/> )} />
             <Route exact path="/:id" element={<MTGCard card={this.state.selected} addCard={this.addCard} />} />
             <Route path='/about' element={(<About />)} />
