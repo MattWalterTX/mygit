@@ -11,7 +11,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-const Home = ({ cards, showMore }) => {
+const Home = ({ cards, showMore, sort }) => {
   function createData(
     name: string,
     color: string,
@@ -38,7 +38,7 @@ const Home = ({ cards, showMore }) => {
       <h2>Set: The Brothers' War</h2>
       <h4>Pick a color to sort.</h4>
       <h4>Select a card to view more details.</h4>
-      <Form />
+      <Form sort={sort} />
       {!cards.length && <h2>Fetching Card Info</h2>}
 
       <TableContainer component={Paper}>
