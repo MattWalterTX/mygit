@@ -2,13 +2,11 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import AppBar from '@mui/material/AppBar'
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import theme from '../../theme';
 import './Header.css'
 
 
@@ -81,9 +79,9 @@ const Header = () => {
               </MenuItem>
             ))}
           </Menu>
-          <Typography >
+          <h2 >
             myGit: the Hubbening
-          </Typography>
+          </h2>
         </Toolbar>
       </AppBar>
     </Box>

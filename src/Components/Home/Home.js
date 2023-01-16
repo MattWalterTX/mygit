@@ -11,7 +11,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-const Home = ({ cards, addCard, removeCard, showMore }) => {
+const Home = ({ cards, showMore }) => {
   function createData(
     name: string,
     color: string,
@@ -39,6 +39,8 @@ const Home = ({ cards, addCard, removeCard, showMore }) => {
       <h4>Pick a color to sort.</h4>
       <h4>Select a card to view more details.</h4>
       <Form />
+      {!cards.length && <h2>Fetching Card Info</h2>}
+
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 150 }} aria-label="simple table">
           <TableHead>

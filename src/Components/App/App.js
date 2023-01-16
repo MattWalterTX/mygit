@@ -35,7 +35,12 @@ class App extends Component {
       cards: [],
       error: null,
       selected: null,
-      collection: []
+      collection: [],
+      whites: [],
+      blues: [],
+      blacks: [],
+      reds: [],
+      greens: [],
     }
   }
 
@@ -58,6 +63,11 @@ class App extends Component {
       const allFetched = [...data[0], ...data[1], ...data[2], ...data[3], ...data[4]];
       let noDupes = allFetched.filter( (ele, ind) => ind === allFetched.findIndex( elem => elem.jobid === ele.jobid && elem.id === ele.id))
       this.setState({ cards: noDupes });
+      this.setState({ whites: data[0]});
+      this.setState({ blacks: data[2]});
+      this.setState({ blues: data[1]});
+      this.setState({ reds: data[3]});
+      this.setState({ greens: data[4]});
     })
   } 
 
@@ -72,8 +82,11 @@ class App extends Component {
   }
 
   showMore = (showCard) => {
-    console.log(this.state.cards.find( card => card.id === showCard.id))
     this.setState({ selected: this.state.cards.find( card => card.id === showCard.id) })
+  }
+
+  sort = () => {
+
   }
 
   render() {
@@ -81,12 +94,11 @@ class App extends Component {
       // can remove cssbaseline after theme implementation
       <div className="App">
         <ThemeProvider theme={theme}>
-        <CssBaseline>
           <Header/>
 
 
           <Routes>
-            <Route path='/' element={(<Home cards={this.state.cards} addCard={this.addCard} removeCard={this.removeCard} showMore={this.showMore} />)} />
+            <Route path='/' element={(<Home cards={this.state.cards} showMore={this.showMore} />)} />
             <Route path='/collection' element={(<Collection collection={this.state.collection}  removeCard={this.removeCard}/> )} />
             <Route path="/:id" element={<MTGCard card={this.state.selected} addCard={this.addCard} />} />
             <Route path='/about' element={(<About />)} />
@@ -106,7 +118,6 @@ class App extends Component {
           </Box>
 
 
-        </CssBaseline>
         </ThemeProvider>
       </div>
     )
