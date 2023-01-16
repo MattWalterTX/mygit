@@ -31,7 +31,7 @@ const Home = ({ cards, showMore }) => {
       <TableCell align="right">{card.colors}</TableCell>
       <TableCell align="right">{card.cmc}</TableCell>
     </TableRow>
-})
+  })
     
   return (
     <div>
