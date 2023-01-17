@@ -63,3 +63,8 @@ const Collection = ({ collection, removeCard }) => { // bring down collection pr
 }
 
 export default Collection
+
+Collection.propTypes = {
+  collection: PropTypes.array,
+  removeCard: PropTypes.func
+}

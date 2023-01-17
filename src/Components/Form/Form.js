@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import theme from '../../theme';
+import PropTypes from 'prop-types';
 import './Form.css'
 
 const Form = ({ sort }) => {
@@ -25,3 +26,7 @@ const Form = ({ sort }) => {
 }
 
 export default Form
+
+Form.propTypes = {
+  sort: PropTypes.func
+}

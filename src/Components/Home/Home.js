@@ -60,3 +60,9 @@ const Home = ({ cards, showMore, sort }) => {
 }
 
 export default Home
+
+Home.propTypes = {
+  cards: PropTypes.array,
+  showMore: PropTypes.func,
+  showMore: PropTypes.func
+}
