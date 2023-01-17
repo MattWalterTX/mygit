@@ -5,6 +5,7 @@ import Home from '../Home/Home'
 import Header from '../Header/Header';
 import Collection from '../Collection/Collection';
 import BadURL from '../BadURL/BadURL'
+import PropTypes from 'prop-types';
 import theme from '../../theme';
 // import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
@@ -27,26 +28,31 @@ const MTGCard = ({ card, addCard }) => {
   return (
     <div>
       {!card ? <BadURL /> : 
-      <Card sx={{ minWidth: 275, pb: '5%'}} >
-        <CardContent>
-          <img src={card.imageUrl} alt={card}></img>
-          <CardActions>
-            </CardActions>
-        </CardContent>
-        <Stack direction="row" spacing={2} justifyContent="center" >
-          <Button variant="contained" component={Link} to="/" sx={() => ({
-            backgroundColor: '#0E86D4', color: 'white', fontStyle: 'italic', width: '35%' })}>
-              Go Home
-          </Button>
-          <Button variant="contained" onClick={() => addCard(card)} sx={() => ({
-            backgroundColor: '#0E86D4', color: 'white', fontStyle: 'italic', width: '35%' })}>
-              Collect
-          </Button>
-        </Stack>
-      </Card>
+        <Card sx={{ minWidth: 275, pb: '5%'}} >
+          <CardContent>
+            <img src={card.imageUrl} alt={card}></img>
+            <CardActions>
+              </CardActions>
+          </CardContent>
+          <Stack direction="row" spacing={2} justifyContent="center" >
+            <Button variant="contained" component={Link} to="/" sx={() => ({
+              backgroundColor: '#0E86D4', color: 'white', fontStyle: 'italic', width: '35%' })}>
+                Go Home
+            </Button>
+            <Button variant="contained" onClick={() => addCard(card)} sx={() => ({
+              backgroundColor: '#0E86D4', color: 'white', fontStyle: 'italic', width: '35%' })}>
+                Collect
+            </Button>
+          </Stack>
+        </Card>
       }
     </div>
   )
 }
 
 export default MTGCard
+
+MTGCard.propTypes = {
+  card: PropTypes.object,
+  addCard: PropTypes.func
+}
