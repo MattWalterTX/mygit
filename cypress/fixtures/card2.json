@@ -1,0 +1,8 @@
+{
+  "cards": [
+    
+      {"name":"Slarty Bartfast","manaCost":"{4}{W}","cmc":2,"colors":["B"],"colorIdentity":["W"],"type":"Creature — Angel","types":["Creature"],"subtypes":["Angel"],"rarity":"Uncommon","set":"10E","setName":"Tenth Edition","text":"Flying\nWhen Angel of Mercy enters the battlefield, you gain 3 life.","flavor":"Every tear shed is a drop of immortality.","artist":"Volkan Baǵa","number":"2★","power":"3","toughness":"3","layout":"normal","variations":["57aaebc1-850c-503d-9f6e-bb8d00d8bf7c"],"printings":["10E","8ED","9ED","DDC","DVD","IMA","INV","JMP","MB1","P02","PS11","PSAL","S99"],"legalities":[{"format":"Commander","legality":"Legal"},{"format":"Duel","legality":"Legal"},{"format":"Gladiator","legality":"Legal"},{"format":"Historic","legality":"Legal"},{"format":"Historicbrawl","legality":"Legal"},{"format":"Legacy","legality":"Legal"},{"format":"Modern","legality":"Legal"},{"format":"Pauper","legality":"Legal"},{"format":"Paupercommander","legality":"Legal"},{"format":"Penny","legality":"Legal"},{"format":"Premodern","legality":"Legal"},{"format":"Vintage","legality":"Legal"}],"id":"card2"
+    }
+    
+    ]
+}

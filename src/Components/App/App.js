@@ -13,6 +13,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import './App.css';
 import Button from '@mui/material/Button';
+import { ConnectingAirportsOutlined } from '@mui/icons-material';
 
 const Copyright = () => {
   return (
@@ -64,6 +65,7 @@ class App extends Component {
       this.setState({ blues: data[2] });
       this.setState({ reds: data[3] });
       this.setState({ greens: data[4] });
+      console.log(data)
     })
   } 
 
