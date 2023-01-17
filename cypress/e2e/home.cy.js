@@ -32,7 +32,6 @@ describe('Home page', () => {
     })
     
     cy.visit('http://localhost:3000')
-    // cy.wait("@gitCards")
   })
 
   it('should see the title banner', () => {
@@ -60,9 +59,8 @@ describe('Home page', () => {
     cy.get('.MuiTypography-body2 > .MuiTypography-root').should('exist')
   })
 
-  // sort form is there?
-  // test table display items
-  // test sorting
-  // test clicking through card to destination /:id
-  // badURL
+  it.skip('should select a color from the dropdown to sort by color.', () => {
+    cy.get('select').click()
+  })
+
 })
