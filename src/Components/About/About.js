@@ -9,7 +9,7 @@ const About = () => {
         <article className='info-container'>
           <h3 className='about-title'>myGit: the Hubbening</h3>
           <p className='about-myGit'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut pulvinar turpis, nec auctor sapien. In metus purus, dictum in ante congue, sollicitudin aliquet leo. Donec in sagittis nunc, ac mattis nulla. Vestibulum vitae libero vel turpis hendrerit porttitor. Quisque in viverra enim. Aenean neque mauris, volutpat a justo a, ultrices sollicitudin purus. Fusce auctor metus sit amet fringilla aliquam. Mauris a elementum dolor. Fusce egestas dictum rhoncus. Aliquam dapibus nunc ac mi hendrerit luctus. Ut neque justo, fringilla eget tincidunt sed, condimentum quis massa.
+            myGit: the Hubbening is an application designed to view cards from the newest set from Magic: the Gathering. On load the cards of all 5 colors will load in. They can be further sorted down by color selection, clicked to view the card and added to a collection. 
           </p>
           <p className='about-us'>
             Feel free to explore my
