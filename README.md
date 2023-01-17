@@ -50,7 +50,7 @@ myGit: the Hubbening is an application designed to view cards from the newest se
 
 ## Set Up
 
-### Deployed at 
+### Deployed at https://thehubbening.surge.sh/
 
 ### Local Installation
 1. Clone the repo
